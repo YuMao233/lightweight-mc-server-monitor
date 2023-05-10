@@ -1,8 +1,13 @@
 import Koa from "koa";
 import session from "koa-session";
-import uuid from "uuid";
+import * as uuid from "uuid";
+
+import { logger } from "./service/log";
+import fs from "fs-extra";
+import { ServerPingCfg } from "./interfaces";
 
 import indexRouters from "./routers";
+import { initPingRefreshService } from "./service/ping-refresh-service";
 
 const app = new Koa();
 
@@ -14,6 +19,10 @@ app.use(session(app));
 app.use(indexRouters.routes());
 app.use(indexRouters.allowedMethods());
 
-app.listen(3000, () => {
-  console.log("服务已运行...");
+app.listen(3000, async () => {
+  logger.warn(
+    `[启动事件] 服务于 ${new Date().toLocaleTimeString()} 时启动，开始初始化流程...`
+  );
+
+  await initPingRefreshService();
 });

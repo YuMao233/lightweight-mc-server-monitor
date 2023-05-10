@@ -1,6 +1,6 @@
 import mcProtocol, { NewPingResult, OldPingResult } from "minecraft-protocol";
 
-interface PingMinecraftServerResponse {
+export interface PingMinecraftServerResponse {
   players: {
     max: number;
     online: number;
@@ -14,7 +14,7 @@ interface PingMinecraftServerResponse {
   protocolVersion: number;
 }
 
-interface MotdDescription {
+export interface MotdDescription {
   color: string;
   text: string;
   extra?: Array<MotdDescription>;
@@ -40,7 +40,7 @@ function getMotdViaDescription(description: MotdDescription[]) {
  * @param {number} [port=25565] - The port of the Minecraft server to ping. Defaults to 25565.
  * @return {Promise<PingMinecraftServerResponse>} A promise that resolves with information about the Minecraft server.
  */
-function pingMinecraftServer(
+export function pingMinecraftServer(
   host: string,
   port: number = 25565
 ): Promise<PingMinecraftServerResponse> {
@@ -97,15 +97,15 @@ function pingMinecraftServer(
   });
 }
 
-async function main() {
-  const st1 = new Date().getTime();
-  const info = await pingMinecraftServer("llxz.cc", 21105);
-  console.log("服务器信息：", info);
-  console.log("服务器信息：", await pingMinecraftServer("ttl.byboy.top"));
-  console.log("服务器信息：", await pingMinecraftServer("xianxiam.fun"));
-  console.log("服务器信息：", await pingMinecraftServer("mc.hypixel.net"));
-  const st2 = new Date().getTime();
-  console.log("SSSPEED:", (st2 - st1) / 1000);
-}
+// async function main() {
+//   const st1 = new Date().getTime();
+//   const info = await pingMinecraftServer("llxz.cc", 21105);
+//   console.log("服务器信息：", info);
+//   console.log("服务器信息：", await pingMinecraftServer("ttl.byboy.top"));
+//   console.log("服务器信息：", await pingMinecraftServer("xianxiam.fun"));
+//   console.log("服务器信息：", await pingMinecraftServer("mc.hypixel.net"));
+//   const st2 = new Date().getTime();
+//   console.log("SSSPEED:", (st2 - st1) / 1000);
+// }
 
-main();
+// main();
