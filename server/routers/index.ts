@@ -3,11 +3,7 @@ import { getPingRefreshService } from "../service/ping-refresh-service";
 import { ServerInfo } from "../interfaces";
 import { getMCSManagerService } from "../service/mcsm-service";
 
-const router = new Router();
-
-router.get("/", async (ctx) => {
-  ctx.body = "";
-});
+const router = new Router({ prefix: "/api" });
 
 router.get("/servers_status", async (ctx) => {
   const service = getPingRefreshService();

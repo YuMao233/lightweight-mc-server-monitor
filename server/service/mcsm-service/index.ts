@@ -2,6 +2,7 @@ import axios from "axios";
 import { readFileSync } from "fs-extra";
 import path from "path";
 import { JsonInterface } from "../../interfaces";
+import { logger } from "../log";
 
 axios.interceptors.request.use((config) => {
   config.headers["Content-Type"] = "application/json; charset=utf-8";
@@ -27,10 +28,17 @@ export class MCSManagerServiceController {
 
   async refresh() {
     for (const iterator of this.configs) {
-      const response = await axios.get(
-        `http://${iterator.addr}/api/overview/?apikey=${iterator.key}`
-      );
-      this.statusInfos.set(iterator.addr, response?.data?.data);
+      try {
+        const response = await axios.get(
+          `http://${iterator.addr}/api/overview/?apikey=${iterator.key}`
+        );
+        logger.info(
+          `已成功获取 MCSManager 面板 [${iterator.addr}] 的服务器信息。`
+        );
+        this.statusInfos.set(iterator.addr, response?.data?.data);
+      } catch (error) {
+        logger.error(`请求 MCSManager 面板 ${iterator.addr} 时错误：${error}`);
+      }
     }
   }
 
@@ -38,7 +46,12 @@ export class MCSManagerServiceController {
     this.refresh();
     this.task = setInterval(() => {
       this.refresh();
-    }, 1000 * 10);
+    }, 1000 * 60);
+  }
+
+  stop() {
+    clearInterval(this.task);
+    this.task = undefined;
   }
 
   getOverview() {
