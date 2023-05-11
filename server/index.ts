@@ -8,6 +8,7 @@ import { ServerPingCfg } from "./interfaces";
 
 import indexRouters from "./routers";
 import { initPingRefreshService } from "./service/ping-refresh-service";
+import { initMCSManagerService } from "./service/mcsm-service";
 
 const app = new Koa();
 
@@ -25,4 +26,5 @@ app.listen(3000, async () => {
   );
 
   await initPingRefreshService();
+  await initMCSManagerService();
 });

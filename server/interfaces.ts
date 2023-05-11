@@ -11,3 +11,7 @@ export interface ServerPingCfg {
 export interface ServerInfo extends ServerPingCfg {
   pingInfo: PingMinecraftServerResponse;
 }
+
+export interface JsonInterface {
+  [key: string]: any;
+}
