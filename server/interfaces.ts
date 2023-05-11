@@ -9,5 +9,5 @@ export interface ServerPingCfg {
 }
 
 export interface ServerInfo extends ServerPingCfg {
-  status: PingMinecraftServerResponse;
+  pingInfo: PingMinecraftServerResponse;
 }

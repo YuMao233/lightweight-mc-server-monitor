@@ -62,7 +62,7 @@ class PingRefreshServiceController {
     this.totalPlayer = 0;
     for (const iterator of this.serverMap.entries()) {
       const serverInfo = iterator[1];
-      this.totalPlayer += serverInfo.status.players.online;
+      this.totalPlayer += serverInfo.pingInfo.players.online;
     }
     this.serverCount = this.serverMap.size;
     logger.info(
@@ -77,7 +77,7 @@ class PingRefreshServiceController {
   ) {
     const serverInfo: ServerInfo = {
       ...server,
-      status: info,
+      pingInfo: info,
     };
     // logger.info(
     //   `请求MC服务器状态 ${serverInfo.addr}:${serverInfo.port} 成功！人数：${serverInfo.status.players.online}/${serverInfo.status.players.max}`
@@ -106,4 +106,8 @@ export async function initPingRefreshService() {
   ) as ServerPingCfg[];
   controller = new PingRefreshServiceController(serverConfigs);
   controller.start();
+}
+
+export function getPingRefreshService() {
+  return controller;
 }
