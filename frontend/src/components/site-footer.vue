@@ -1,15 +1,9 @@
-<script setup lang="ts">
-import { defineProps } from 'vue'
-defineProps({
-  title: String,
-  likes: Number
-})
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="container">
-    <div>标题</div>
-    <div>内容</div>
+    <div>友联备案</div>
+    <div>其他信息</div>
   </div>
 </template>
 
