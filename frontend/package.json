@@ -12,7 +12,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "ant-design-vue": "^3.2.20",
+    "element-plus": "^2.3.4",
     "pinia": "^2.0.35",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"

@@ -1,4 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { defineProps } from 'vue'
+defineProps({
+  title: String,
+  likes: Number
+})
+</script>
 
 <template>
   <div>
