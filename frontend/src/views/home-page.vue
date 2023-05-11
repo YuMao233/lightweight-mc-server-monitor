@@ -1,7 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import homeIndex from '../components/home-index.vue'
+</script>
 
 <template>
   <main>
-    <a-button type="primary">Primary Button</a-button>
+    <div>
+      <homeIndex></homeIndex>
+    </div>
   </main>
 </template>
