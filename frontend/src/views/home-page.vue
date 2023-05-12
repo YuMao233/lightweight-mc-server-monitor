@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import ContextBlock from '../components/context-block.vue'
 import homeIndex from '../components/home-index.vue'
+import { reactive } from 'vue'
+import type { ServerInfo } from '../interface'
+import mcServer from '@/components/mc-server.vue'
+
+const serverList: ServerInfo[] = reactive([])
 
 const baseInfoList = [
   {
@@ -28,6 +33,58 @@ const baseInfoList = [
     icon: 'Guide'
   }
 ]
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  serverList.push({
+    addr: '',
+    port: 25565,
+    info: '测试内容',
+    avatar: '艹',
+    website: 'www.baidu.com',
+    pingInfo: {
+      players: {
+        max: 100,
+        online: 12
+      },
+      version: '',
+      motd: '但阿斯哦就打ISO基地哦撒但阿斯哦就打ISO基地哦撒但阿斯哦就打ISO基地哦撒',
+      protocolVersion: 2
+    }
+  })
+  serverList.push({
+    addr: '',
+    port: 25565,
+    info: '测试内容',
+    avatar: '艹',
+    website: 'www.baidu.com',
+    pingInfo: {
+      players: {
+        max: 100,
+        online: 12
+      },
+      version: '',
+      motd: 'xzxzxzxzxzxzx',
+      protocolVersion: 2
+    }
+  })
+  serverList.push({
+    addr: '',
+    port: 25565,
+    info: '测试内容',
+    avatar: '艹',
+    website: 'www.baidu.com',
+    pingInfo: {
+      players: {
+        max: 100,
+        online: 12
+      },
+      version: '',
+      motd: 'xzxzxzxzxzxzx',
+      protocolVersion: 2
+    }
+  })
+})
 </script>
 
 <template>
@@ -57,8 +114,15 @@ const baseInfoList = [
 
     <ContextBlock>
       <div class="block-title">
-        <h1>监控中的服务器列表</h1>
+        <h1>服务器列表</h1>
         <p>来自于管理员配置的所有服务器列表</p>
+      </div>
+      <div>
+        <el-row :gutter="12">
+          <el-col :md="24" :lg="24" v-for="item in serverList" :key="item.addr + item.port">
+            <mc-server :server="item"></mc-server>
+          </el-col>
+        </el-row>
       </div>
     </ContextBlock>
   </main>
