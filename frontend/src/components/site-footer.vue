@@ -14,5 +14,7 @@
   align-items: center;
   height: 60px;
   background-color: rgb(221, 221, 221);
+  max-width: 1200px;
+  margin: auto;
 }
 </style>
