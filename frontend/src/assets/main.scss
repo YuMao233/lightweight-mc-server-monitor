@@ -2,10 +2,26 @@ body {
   margin: 0px;
 }
 
+.block-title-tip {
+  display: inline-block;
+  margin-right: 10px;
+  border-radius: 2px;
+  color: #409eff;
+  background-color: #409eff;
+  height: 2rem;
+  width: 8px;
+}
+
+.block-title-tip-green {
+  background-color: #5ab93e !important;
+}
+
 .block-title {
   h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin: 0px;
+    display: flex;
+    align-items: center;
   }
   p {
     margin: 6px 0px;
@@ -14,7 +30,7 @@ body {
 }
 
 .title1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-family: 600;
 }
 

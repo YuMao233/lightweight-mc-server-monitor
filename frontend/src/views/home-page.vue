@@ -95,7 +95,10 @@ onMounted(() => {
 
     <ContextBlock style="margin-top: 0px; background-color: #f8f8fb">
       <div class="block-title">
-        <h1>服务器节点数据</h1>
+        <h1>
+          <div class="block-title-tip"></div>
+          服务器节点数据
+        </h1>
         <p>数据来自 X 面板各节点。</p>
       </div>
 
@@ -114,10 +117,13 @@ onMounted(() => {
 
     <ContextBlock>
       <div class="block-title">
-        <h1>服务器列表</h1>
-        <p>来自于管理员配置的所有服务器列表</p>
+        <h1>
+          <div class="block-title-tip block-title-tip-green"></div>
+          服务器列表
+        </h1>
+        <p>来自于管理员配置的监控服务器列表，轻点服务器信息即可跳转到详情页。</p>
       </div>
-      <div>
+      <div style="margin-top: 4rem">
         <el-row :gutter="12">
           <el-col :md="24" :lg="24" v-for="item in serverList" :key="item.addr + item.port">
             <mc-server :server="item"></mc-server>

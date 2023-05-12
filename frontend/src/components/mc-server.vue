@@ -45,6 +45,8 @@ const openWindow = (url: string) => {
 
 <style lang="scss" scoped>
 .line {
+  cursor: pointer;
+
   .more-info {
     text-align: right;
     width: 190px;
