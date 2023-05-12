@@ -40,15 +40,15 @@ onMounted(() => {
     addr: '',
     port: 25565,
     info: '测试内容',
-    avatar: '艹',
+    avatar: 'https://element-plus.org/images/sponsors/jnpfsoft.jpg',
     website: 'www.baidu.com',
     pingInfo: {
       players: {
         max: 100,
         online: 12
       },
-      version: '',
-      motd: '但阿斯哦就打ISO基地哦撒但阿斯哦就打ISO基地哦撒但阿斯哦就打ISO基地哦撒',
+      version: 'Spigot MC 1.12.2',
+      motd: '但阿斯哦就打ISO基地哦撒但阿斯哦就打ISO基地哦撒但阿斯哦就打ISO基地哦撒但阿斯哦就打ISO基地哦撒但阿斯哦就打ISO基地哦撒但阿斯哦就打ISO基地哦撒但阿斯哦就打ISO基地哦撒但阿斯哦就打ISO基地哦撒但阿斯哦就打ISO基地哦撒',
       protocolVersion: 2
     }
   })

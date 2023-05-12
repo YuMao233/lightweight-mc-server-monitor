@@ -16,24 +16,25 @@ const openWindow = (url: string) => {
       <div style="">
         <el-row :gutter="6" justify="space-between">
           <el-col :md="2">
-            <el-image
-              style="width: 64px; height: 64px"
-              src="https://i.mcmod.cn/play/favicon/20186793.png?r=mFyY"
-              fit="cover"
-            />
+            <el-image style="width: 64px; height: 64px" :src="server.avatar" fit="cover" />
           </el-col>
-          <el-col :md="14">
+          <el-col :md="14" class="one-line-text">
             <div>
               <div class="text">{{ server.info }}</div>
-              <div class="text" style="color: rgb(146, 145, 145)">{{ server.pingInfo.motd }}</div>
+              <div class="text" style="color: rgb(146, 145, 145)">
+                {{ server.pingInfo.motd }}
+              </div>
             </div>
           </el-col>
           <el-col :md="8" style="justify-content: end">
-            <div style="text-align: right">
-              <div class="text">{{ server.addr || '***.***.***.***' + ':' + server.port }}</div>
+            <div class="more-info">
               <div class="text">
-                人数：{{ server.pingInfo.players.online }}/{{ server.pingInfo.players.max }}
+                {{ server.addr || '***.***.***.***' + ':' + server.port }}
               </div>
+              <div class="text">
+                {{ server.pingInfo.players.online }}/{{ server.pingInfo.players.max }}
+              </div>
+              <div>{{ server.pingInfo.version || '--' }}</div>
             </div>
           </el-col>
         </el-row>
@@ -44,6 +45,13 @@ const openWindow = (url: string) => {
 
 <style lang="scss" scoped>
 .line {
+  .more-info {
+    text-align: right;
+    width: 190px;
+    div {
+      font-size: 0.8rem !important;
+    }
+  }
   .card {
     margin: 6px 0px;
   }
