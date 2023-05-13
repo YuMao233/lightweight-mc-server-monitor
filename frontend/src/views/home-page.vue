@@ -4,12 +4,12 @@ import homeIndex from '../components/home-index.vue'
 import { reactive } from 'vue'
 import type { ServerInfo } from '../interface'
 import mcServer from '@/components/mc-server.vue'
-
+import axios from 'axios'
 const serverList: ServerInfo[] = reactive([])
 
 const baseInfoList = [
   {
-    title: '节点个数',
+    title: '在线节点机器数',
     text: '但阿斯哦就打ISO基地哦撒',
     value: 12,
     icon: 'Guide'
@@ -21,7 +21,7 @@ const baseInfoList = [
     icon: 'Guide'
   },
   {
-    title: '节点个数',
+    title: '',
     text: '但阿斯哦就打ISO基地哦撒',
     value: 12,
     icon: 'Guide'
@@ -99,7 +99,7 @@ onMounted(() => {
           <div class="block-title-tip"></div>
           服务器节点数据
         </h1>
-        <p>数据来自 X 面板各节点。</p>
+        <p>数据来自监控数据各机器节点。</p>
       </div>
 
       <el-row style="margin-top: 4rem">
@@ -109,8 +109,11 @@ onMounted(() => {
               <component :is="item.icon"></component>
             </el-icon>
           </div>
-          <p class="title2">{{ item.title }}</p>
-          <p class="text">{{ item.text }}</p>
+          <p style="margin: 12px 0px" class="title2">{{ item.title }}</p>
+          <!-- <p class="text">{{ item.text }}</p> -->
+          <div style="font-size: 2rem; font-weight: 600; margin: 0px">
+            {{ item.value }}
+          </div>
         </el-col>
       </el-row>
     </ContextBlock>

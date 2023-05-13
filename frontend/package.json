@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.1.0",
+    "axios": "^1.4.0",
     "element-plus": "^2.3.4",
     "pinia": "^2.0.35",
     "vue": "^3.2.47",
@@ -21,7 +22,7 @@
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
     "@tsconfig/node18": "^2.0.0",
-    "@types/node": "^18.16.3",
+    "@types/node": "^18.16.8",
     "@vitejs/plugin-vue": "^4.2.1",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
     "@vue/eslint-config-prettier": "^7.1.0",

@@ -43,7 +43,8 @@ body {
   font-size: 1rem;
 }
 
-.el-main {
+.el-main,
+.el-footer {
   padding: 0px !important;
 }
 
@@ -56,4 +57,8 @@ body {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+.text-red {
+  color: #b83030;
 }

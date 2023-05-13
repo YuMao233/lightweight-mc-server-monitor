@@ -6,9 +6,9 @@ import siteFooter from './components/site-footer.vue'
 <template>
   <div class="common-layout">
     <el-container>
-      <el-header>
+      <div>
         <site-header></site-header>
-      </el-header>
+      </div>
       <el-main>
         <RouterView />
       </el-main>
