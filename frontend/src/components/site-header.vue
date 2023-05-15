@@ -11,10 +11,10 @@ const toServerList = () => {}
 <template>
   <div class="wrapper">
     <div class="container">
-      <div>监控中心</div>
+      <!-- <div>监控中心</div>
       <div>
         <div @click="toServerList">服务器列表</div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

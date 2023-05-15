@@ -19,7 +19,7 @@ const { globalServerInfo, baseInfoList, serverList } = useServersInfo()
       <div class="block-title">
         <h1>
           <div class="block-title-tip"></div>
-          服务器节点数据
+          服务器节点
         </h1>
         <p>数据来自监控数据各机器节点。</p>
       </div>
@@ -54,7 +54,7 @@ const { globalServerInfo, baseInfoList, serverList } = useServersInfo()
       <div class="block-title">
         <h1>
           <div class="block-title-tip block-title-tip-green"></div>
-          服务器列表
+          游戏服务器
         </h1>
         <p>来自于管理员配置的监控服务器列表，轻点服务器信息即可跳转到详情页。</p>
       </div>

@@ -28,8 +28,9 @@ export function useServersInfo() {
 
     for (const key in mcsmStatus) {
       const v = mcsmStatus[key]
+
       baseInfoList.push({
-        title: key,
+        title: key + (!v.available ? '（离线）' : ''),
         text: `CPU: ${Number(v.system?.cpuUsage * 100).toFixed(1)}% MEM: ${Number(
           v.system?.memUsage * 100
         ).toFixed(2)}%`,

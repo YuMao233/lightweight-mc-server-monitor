@@ -16,7 +16,7 @@ defineProps({
 
 <style lang="scss" scoped>
 .context-block-panel-wrapper {
-  padding: 10rem 0px;
+  padding: 10rem 12px;
   max-width: 1200px;
   margin: auto;
 }

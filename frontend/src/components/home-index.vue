@@ -33,10 +33,10 @@ const containerStyle = {
         </div>
       </div>
     </div>
-    <div class="svg-1">
+    <div class="svg-1 only-pc-display">
       <embed src="/asserts/icon-1.svg" type="image/svg+xml" />
     </div>
-    <div class="svg-2">
+    <div class="svg-2 only-pc-display">
       <embed src="/asserts/icon-1.svg" type="image/svg+xml" />
     </div>
     <!-- <div class="icon-3">
@@ -93,6 +93,17 @@ const containerStyle = {
     z-index: 4;
     font-size: 2.2rem;
     font-weight: 400;
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  .container {
+    h1 {
+      font-size: 2.2rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+    }
   }
 }
 </style>

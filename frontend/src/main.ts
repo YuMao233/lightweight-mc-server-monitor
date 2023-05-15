@@ -19,6 +19,7 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 app.use(createPinia())
 app.use(router)
 
-window.document.body.style.fontSize = 16 + 'px'
+const html = document.getElementsByTagName('html')[0]
+html.style.fontSize = 16 + 'px'
 
 app.mount('#app')
