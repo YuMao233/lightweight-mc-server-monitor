@@ -6,8 +6,10 @@ defineProps<{
   globalServerInfo: baseGlobalServerInfo
 }>()
 
+let wh = window.innerHeight
+if (wh < 700) wh = 700
 const containerStyle = {
-  height: window.innerHeight - 60 + 'px'
+  height: wh - 60 + 'px'
 }
 </script>
 
@@ -54,6 +56,7 @@ const containerStyle = {
   left: 0;
   right: 0;
   bottom: 0;
+  min-height: 700px;
 }
 .svg-1 {
   position: absolute;
