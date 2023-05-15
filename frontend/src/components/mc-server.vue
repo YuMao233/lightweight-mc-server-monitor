@@ -11,12 +11,16 @@ const openWindow = (url: string) => {
 </script>
 
 <template>
-  <div class="line">
+  <div class="line" @click="openWindow(server.website)">
     <el-card shadow="hover" class="card" body-style="padding:12px">
       <div style="">
         <el-row :gutter="6" justify="space-between">
           <el-col :md="2">
-            <el-image style="width: 64px; height: 64px" :src="server.avatar" fit="cover" />
+            <el-image
+              style="width: 64px; height: 64px"
+              :src="server.avatar || '/asserts/default-server-icon.jpeg'"
+              fit="cover"
+            />
           </el-col>
           <el-col :md="14" class="one-line-text">
             <div>
@@ -24,17 +28,19 @@ const openWindow = (url: string) => {
               <div class="text" style="color: rgb(146, 145, 145)">
                 {{ server.pingInfo.motd }}
               </div>
+              <div class="text" style="color: rgb(146, 145, 145); font-size: 0.8rem">
+                {{ server.pingInfo.version || '--' }}
+              </div>
             </div>
           </el-col>
           <el-col :md="8" style="justify-content: end">
             <div class="more-info">
-              <div class="text">
+              <div class="text text-blue">
                 {{ server.addr || '***.***.***.***' + ':' + server.port }}
               </div>
-              <div class="text">
+              <div class="text text-green">
                 {{ server.pingInfo.players.online }}/{{ server.pingInfo.players.max }}
               </div>
-              <div>{{ server.pingInfo.version || '--' }}</div>
             </div>
           </el-col>
         </el-row>
@@ -51,7 +57,7 @@ const openWindow = (url: string) => {
     text-align: right;
     width: 190px;
     div {
-      font-size: 0.8rem !important;
+      font-size: 0.9rem !important;
     }
   }
   .card {

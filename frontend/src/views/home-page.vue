@@ -2,95 +2,17 @@
 import ContextBlock from '../components/context-block.vue'
 import homeIndex from '../components/home-index.vue'
 import { reactive } from 'vue'
-import type { ServerInfo } from '../interface'
-import mcServer from '@/components/mc-server.vue'
-import axios from 'axios'
-const serverList: ServerInfo[] = reactive([])
+import type { baseGlobalServerInfo, ServerInfo } from '../interface'
+import mcServer from '../components/mc-server.vue'
+import { useServersInfo } from '../services/server-info'
 
-const baseInfoList = [
-  {
-    title: '在线节点机器数',
-    text: '但阿斯哦就打ISO基地哦撒',
-    value: 12,
-    icon: 'Guide'
-  },
-  {
-    title: '节点个数',
-    text: '但阿斯哦就打ISO基地哦撒',
-    value: 12,
-    icon: 'Guide'
-  },
-  {
-    title: '',
-    text: '但阿斯哦就打ISO基地哦撒',
-    value: 12,
-    icon: 'Guide'
-  },
-  {
-    title: '节点个数',
-    text: '但阿斯哦就打ISO基地哦撒',
-    value: 12,
-    icon: 'Guide'
-  }
-]
-import { onMounted } from 'vue'
-
-onMounted(() => {
-  serverList.push({
-    addr: '',
-    port: 25565,
-    info: '测试内容',
-    avatar: 'https://element-plus.org/images/sponsors/jnpfsoft.jpg',
-    website: 'www.baidu.com',
-    pingInfo: {
-      players: {
-        max: 100,
-        online: 12
-      },
-      version: 'Spigot MC 1.12.2',
-      motd: '但阿斯哦就打ISO基地哦撒但阿斯哦就打ISO基地哦撒但阿斯哦就打ISO基地哦撒但阿斯哦就打ISO基地哦撒但阿斯哦就打ISO基地哦撒但阿斯哦就打ISO基地哦撒但阿斯哦就打ISO基地哦撒但阿斯哦就打ISO基地哦撒但阿斯哦就打ISO基地哦撒',
-      protocolVersion: 2
-    }
-  })
-  serverList.push({
-    addr: '',
-    port: 25565,
-    info: '测试内容',
-    avatar: '艹',
-    website: 'www.baidu.com',
-    pingInfo: {
-      players: {
-        max: 100,
-        online: 12
-      },
-      version: '',
-      motd: 'xzxzxzxzxzxzx',
-      protocolVersion: 2
-    }
-  })
-  serverList.push({
-    addr: '',
-    port: 25565,
-    info: '测试内容',
-    avatar: '艹',
-    website: 'www.baidu.com',
-    pingInfo: {
-      players: {
-        max: 100,
-        online: 12
-      },
-      version: '',
-      motd: 'xzxzxzxzxzxzx',
-      protocolVersion: 2
-    }
-  })
-})
+const { globalServerInfo, baseInfoList, serverList } = useServersInfo()
 </script>
 
 <template>
   <main>
     <div>
-      <homeIndex></homeIndex>
+      <homeIndex :global-server-info="globalServerInfo"></homeIndex>
     </div>
 
     <ContextBlock style="margin-top: 0px; background-color: #f8f8fb">
@@ -102,18 +24,28 @@ onMounted(() => {
         <p>数据来自监控数据各机器节点。</p>
       </div>
 
-      <el-row style="margin-top: 4rem">
+      <el-row>
         <el-col :md="6" v-for="(item, index) in baseInfoList" :key="index">
-          <div class="icon-block">
-            <el-icon :size="42">
-              <component :is="item.icon"></component>
-            </el-icon>
+          <div class="daemon-node">
+            <div class="icon-block">
+              <el-icon :size="42">
+                <Connection />
+                <!-- <component :is="item.icon"></component> -->
+              </el-icon>
+            </div>
+            <div class="daemon-detail">
+              <div class="title2">{{ item.title }}</div>
+              <div class="text-gray">
+                <div class="title3" style="margin-top: 0.4rem">{{ item.text }}</div>
+                <div class="title3">{{ item.subText }}</div>
+                <!-- <div class="title3">{{ item.subText2 }}</div> -->
+              </div>
+            </div>
           </div>
-          <p style="margin: 12px 0px" class="title2">{{ item.title }}</p>
           <!-- <p class="text">{{ item.text }}</p> -->
-          <div style="font-size: 2rem; font-weight: 600; margin: 0px">
+          <!-- <div style="font-size: 2rem; font-weight: 600; margin: 0px">
             {{ item.value }}
-          </div>
+          </div> -->
         </el-col>
       </el-row>
     </ContextBlock>
@@ -147,5 +79,11 @@ onMounted(() => {
   align-items: center;
   border-radius: 16px;
   color: rgb(249, 249, 249);
+}
+.daemon-node {
+  margin-top: 4rem;
+}
+.daemon-detail {
+  margin-top: 12px;
 }
 </style>

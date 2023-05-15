@@ -1,4 +1,11 @@
 <script setup lang="ts">
+import type { baseGlobalServerInfo } from '../interface'
+import { defineProps } from 'vue'
+
+defineProps<{
+  globalServerInfo: baseGlobalServerInfo
+}>()
+
 const containerStyle = {
   height: window.innerHeight - 60 + 'px'
 }
@@ -11,8 +18,10 @@ const containerStyle = {
   <div class="container" :style="containerStyle">
     <div style="z-index: 5">
       <h1>Minecraft 服务器数据监控中心</h1>
+
       <h2>
-        总在线人数：<span class="text-red">231</span>，在线服务器：<span class="text-red">231</span>
+        总在线人数：<span class="text-red">{{ globalServerInfo.totalPlayer }}</span
+        >，在线服务器：<span class="text-red">{{ globalServerInfo.serverCount }}</span>
       </h2>
 
       <div style="margin-top: 12rem">

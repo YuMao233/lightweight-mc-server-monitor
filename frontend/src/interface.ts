@@ -27,3 +27,9 @@ export interface PingMinecraftServerResponse {
   motd: string
   protocolVersion: number
 }
+
+export interface baseGlobalServerInfo {
+  serverCount: number
+  totalPlayer: number
+  servers: ServerInfo[]
+}
