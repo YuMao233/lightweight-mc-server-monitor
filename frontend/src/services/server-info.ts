@@ -4,7 +4,7 @@ import axios from 'axios'
 import type { ServerInfo, baseGlobalServerInfo } from '@/interface'
 
 export function useServersInfo() {
-  const task = ref(null)
+  const task = ref<number>(0)
   const serverList: ServerInfo[] = reactive([])
   const globalServerInfo: baseGlobalServerInfo = reactive({
     serverCount: 0,
@@ -49,6 +49,10 @@ export function useServersInfo() {
   }
 
   onMounted(async () => {
+    if (task.value) {
+      clearInterval(task.value)
+      task.value = 0
+    }
     loop()
     task.value = setInterval(() => {
       loop()
