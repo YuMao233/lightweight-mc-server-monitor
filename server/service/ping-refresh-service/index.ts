@@ -42,6 +42,7 @@ class PingRefreshServiceController {
           this.onServerResponse(iterator, info);
         })
         .catch((err) => {
+          this.onServerRequestFailed(iterator);
           //   logger.error(
           //     `请求MC服务器状态 ${iterator.addr}:${iterator.port} 错误: ${err}`
           //   );
@@ -62,7 +63,9 @@ class PingRefreshServiceController {
     this.totalPlayer = 0;
     for (const iterator of this.serverMap.entries()) {
       const serverInfo = iterator[1];
-      this.totalPlayer += serverInfo.pingInfo.players.online;
+      if (serverInfo.pingInfo) {
+        this.totalPlayer += serverInfo.pingInfo.players.online;
+      }
     }
     this.serverCount = this.serverMap.size;
     logger.info(
@@ -78,10 +81,20 @@ class PingRefreshServiceController {
     const serverInfo: ServerInfo = {
       ...server,
       pingInfo: info,
+      isOnline: true,
     };
     // logger.info(
     //   `请求MC服务器状态 ${serverInfo.addr}:${serverInfo.port} 成功！人数：${serverInfo.status.players.online}/${serverInfo.status.players.max}`
     // );
+    this.serverMap.set(this.getMapKey(server), serverInfo);
+  }
+
+  private onServerRequestFailed(server: ServerPingCfg) {
+    const serverInfo: ServerInfo = {
+      ...server,
+      isOnline: false,
+      pingInfo: undefined,
+    };
     this.serverMap.set(this.getMapKey(server), serverInfo);
   }
 

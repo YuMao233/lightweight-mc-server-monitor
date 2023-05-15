@@ -9,7 +9,8 @@ export interface ServerPingCfg {
 }
 
 export interface ServerInfo extends ServerPingCfg {
-  pingInfo: PingMinecraftServerResponse;
+  pingInfo?: PingMinecraftServerResponse;
+  isOnline?: boolean;
 }
 
 export interface JsonInterface {

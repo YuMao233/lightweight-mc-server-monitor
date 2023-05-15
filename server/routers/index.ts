@@ -7,10 +7,11 @@ const router = new Router({ prefix: "/api" });
 
 router.get("/servers_status", async (ctx) => {
   const service = getPingRefreshService();
-  const servers: ServerInfo[] = [];
+  let servers: ServerInfo[] = [];
   for (const iterator of service.serverMap) {
     servers.push(iterator[1]);
   }
+  servers = servers.sort((a, b) => a.info.charCodeAt(0) - b.info.charCodeAt(0));
   ctx.body = {
     totalPlayer: service.totalPlayer,
     serverCount: service.serverMap.size,
