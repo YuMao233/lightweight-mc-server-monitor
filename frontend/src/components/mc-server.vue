@@ -18,7 +18,7 @@ const openWindow = (url: string) => {
           <el-col :md="2">
             <el-image
               style="width: 64px; height: 64px"
-              :src="server.avatar || '/asserts/default-server-icon.jpeg'"
+              :src="server.avatar || '/assets/default-server-icon.jpeg'"
               fit="cover"
             />
           </el-col>

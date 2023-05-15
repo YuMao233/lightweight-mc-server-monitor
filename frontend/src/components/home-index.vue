@@ -15,7 +15,7 @@ const containerStyle = {
 
 <template>
   <div class="bg-img">
-    <!-- <img src="/asserts/bg.jpeg" height="100%" width="100%" /> -->
+    <!-- <img src="/assets/bg.jpeg" height="100%" width="100%" /> -->
   </div>
   <div class="container" :style="containerStyle">
     <div style="z-index: 5">
@@ -34,10 +34,10 @@ const containerStyle = {
       </div>
     </div>
     <div class="svg-1 only-pc-display">
-      <embed src="/asserts/icon-1.svg" type="image/svg+xml" />
+      <embed src="/assets/icon-1.svg" type="image/svg+xml" />
     </div>
     <div class="svg-2 only-pc-display">
-      <embed src="/asserts/icon-1.svg" type="image/svg+xml" />
+      <embed src="/assets/icon-1.svg" type="image/svg+xml" />
     </div>
     <!-- <div class="icon-3">
       <el-icon><Monitor /></el-icon>
@@ -48,7 +48,7 @@ const containerStyle = {
 <style lang="scss" scoped>
 .bg-img {
   z-index: -1;
-  background-image: url('/asserts/bg.jpeg');
+  background-image: url('/assets/bg.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
