@@ -1,1 +1,1 @@
-export const API_ADDR = '/api/'
+export const API_ADDR = '/api'
