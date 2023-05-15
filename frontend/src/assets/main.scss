@@ -64,7 +64,7 @@ body {
 }
 
 .text-red {
-  color: #b83030;
+  color: #db3737;
 }
 
 .text-gray {
@@ -77,4 +77,13 @@ body {
 
 .text-green {
   color: #64993f;
+}
+
+// @media screen and (min-width: 740px) {
+// }
+
+@media only screen and (max-width: 740px) {
+  .only-pc-display {
+    display: none;
+  }
 }
