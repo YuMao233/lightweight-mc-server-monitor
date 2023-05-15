@@ -21,7 +21,7 @@ const { globalServerInfo, baseInfoList, serverList } = useServersInfo()
           <div class="block-title-tip"></div>
           服务器节点
         </h1>
-        <p>数据来自监控数据各机器节点。</p>
+        <p>来自监控数据各机器节点探针所获取的数据。</p>
       </div>
 
       <el-row>

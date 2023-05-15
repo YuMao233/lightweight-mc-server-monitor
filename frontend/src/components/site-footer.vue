@@ -16,7 +16,7 @@
           <div class="wrapper">京 ICP 备17022362号</div>
         </el-link>
 
-        <div style="margin-top: 1rem">反馈邮箱：14907471@QQ.com</div>
+        <!-- <div style="margin-top: 1rem">反馈邮箱：14907471@QQ.com</div> -->
       </div>
       <!-- <div>反馈邮箱：XXXX@qq.com</div> -->
     </div>
