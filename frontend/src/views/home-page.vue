@@ -57,6 +57,10 @@ const { globalServerInfo, baseInfoList, serverList } = useServersInfo()
           游戏服务器
         </h1>
         <p>来自于管理员配置的监控服务器列表，轻点服务器信息即可跳转到详情页。</p>
+        <p>
+          在线总人数：<span class="text-green">{{ globalServerInfo.totalPlayer }}</span>
+          人，在线服务器：<span class="text-green">{{ globalServerInfo.serverCount }}</span> 个
+        </p>
       </div>
       <div style="margin-top: 4rem">
         <el-row :gutter="12">

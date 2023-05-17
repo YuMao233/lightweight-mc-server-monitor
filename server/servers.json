@@ -4,28 +4,33 @@
     "port": 21105,
     "info": "我的小服务器",
     "avatar": "",
-    "website": "http://www.baidu.com"
+    "website": "http://www.baidu.com",
+    "download": "http://oss.duzuii.com/d/MCSManager/MCSManager/MCSManager_v9.8.0_win_x64.zip",
+    "author": "服主：双羽，QQ 951092158"
   },
   {
     "addr": "mcsmanager.com",
     "port": 25565,
     "info": "阿拉德大陆服务器",
     "avatar": "",
-    "website": "http://www.baidu.com"
+    "website": "http://www.baidu.com",
+    "download": "http://oss.duzuii.com/d/MCSManager/MCSManager/MCSManager_v9.8.0_win_x64.zip",
+    "author": "服主：双羽，QQ 951092158"
   },
   {
     "addr": "ttl.byboy.top",
     "port": 25565,
     "info": "示例服务器名称3",
     "avatar": "",
-    "website": "http://www.baidu.com"
+    "website": "http://www.baidu.com",
+    "download": "http://oss.duzuii.com/d/MCSManager/MCSManager/MCSManager_v9.8.0_win_x64.zip",
+    "author": "服主：双羽，QQ 951092158"
   },
   {
     "addr": "guilai.fun",
     "port": 25565,
     "info": "示例服务器名称4",
-    "avatar": "",
-    "website": "http://www.baidu.com"
+    "avatar": ""
   },
   {
     "addr": "mcsmanager.com",
@@ -67,6 +72,8 @@
     "port": 25565,
     "info": "示例服务器名称10",
     "avatar": "",
-    "website": "http://www.baidu.com"
+    "website": "http://www.baidu.com",
+    "download": "http://oss.duzuii.com/d/MCSManager/MCSManager/MCSManager_v9.8.0_win_x64.zip",
+    "author": "服主：双羽，QQ 951092158"
   }
 ]

@@ -5,7 +5,9 @@ export interface ServerPingCfg {
   port: number;
   info: string;
   avatar: string;
-  website: string;
+  website?: string;
+  download?: string;
+  author?: string;
 }
 
 export interface ServerInfo extends ServerPingCfg {
