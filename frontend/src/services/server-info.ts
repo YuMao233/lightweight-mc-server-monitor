@@ -57,7 +57,7 @@ export function useServersInfo() {
     loop()
     task.value = setInterval(() => {
       loop()
-    }, 6000)
+    }, 1000 * 10)
   })
 
   return {

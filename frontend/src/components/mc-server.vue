@@ -27,7 +27,7 @@ const isOnline = props.server.pingInfo != null && props.server.isOnline
             </div>
           </el-col>
           <el-col :md="16">
-            <div class="one-line-text">
+            <div>
               <div v-if="server.pingInfo">
                 <div class="text">{{ server.info }}</div>
                 <div class="text" style="color: rgb(146, 145, 145)">

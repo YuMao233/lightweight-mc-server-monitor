@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import ContextBlock from '../components/context-block.vue'
 import homeIndex from '../components/home-index.vue'
-import { reactive } from 'vue'
-import type { baseGlobalServerInfo, ServerInfo } from '../interface'
 import mcServer from '../components/mc-server.vue'
 import { useServersInfo } from '../services/server-info'
 
