@@ -8,7 +8,7 @@ class PingRefreshServiceController {
   private task?: NodeJS.Timer;
   //   private countTask?: NodeJS.Timer;
   private taskID = 1;
-  private INV = 1000 * 12;
+  private INV = 1000 * 20;
   public totalPlayer = 0;
 
   public serverCount = 0;
