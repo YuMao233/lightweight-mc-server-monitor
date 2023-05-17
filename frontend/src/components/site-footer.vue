@@ -5,6 +5,9 @@
 //     addr: ''
 //   }
 // ]
+const releaseTime = new Date('2023/5/16 00:00:00').getTime()
+const currentTime = Date.now()
+const runningDays = Math.ceil((currentTime - releaseTime) / 86400000)
 </script>
 
 <template>
@@ -12,9 +15,10 @@
     <div class="container">
       <div>
         <div>版权所有 © 2023 保留所有权利。</div>
-        <el-link :underline="true" href="https://beian.miit.gov.cn/" target="_blank">
+        <div>本网站已运行 {{ runningDays }} 天。</div>
+        <!-- <el-link :underline="true" href="https://beian.miit.gov.cn/" target="_blank">
           <div class="wrapper">京 ICP 备17022362号</div>
-        </el-link>
+        </el-link> -->
 
         <!-- <div style="margin-top: 1rem">反馈邮箱：14907471@QQ.com</div> -->
       </div>
