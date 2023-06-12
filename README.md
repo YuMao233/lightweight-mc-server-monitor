@@ -20,6 +20,14 @@ cd server
 npm run start
 ```
 
-4. 通过 IP 访问网站，默认监听 80 端口，如果你需要 HTTPS 可以套一层 Nginx 反向代理。
+4. 通过 IP 访问网站
+
+默认监听 80 端口，如果你需要 HTTPS 可以套一层 Nginx 反向代理。
 
 如果要修改端口请打开文件 server/index.ts 中的第 15 行，将数字 80 改成其他即可。
+
+## 配置文件
+
+server\servers.json 要监听的 MC 服务器列表
+
+server\mcsms.json MCSM 面板列表
