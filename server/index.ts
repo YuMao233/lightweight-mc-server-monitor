@@ -12,7 +12,7 @@ import { initPingRefreshService } from "./service/ping-refresh-service";
 import { initMCSManagerService } from "./service/mcsm-service";
 import path from "path";
 
-const PORT = 3000;
+const PORT = 80;
 const app = new Koa();
 
 // 配置 session
