@@ -1,4 +1,8 @@
-# MC 服务器监控中心
+# 轻量级 Minecraft 状态监视网站
+
+如图所示
+
+![Snipaste_2024-03-14_16-43-41](https://github.com/unitwk/mc-server-status-center/assets/18360009/90c126da-6c9b-4a04-9fc6-565d1b9b8ea6)
 
 ## 启动方式
 
